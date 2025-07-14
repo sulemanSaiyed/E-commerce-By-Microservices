@@ -1,0 +1,7 @@
+spring:
+  application:
+    name:user_service
+  config:
+    import:optional:configServer:http://localhost:2000
+  server:
+    port:8001
