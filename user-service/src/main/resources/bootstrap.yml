@@ -1,7 +1,8 @@
 spring:
   application:
-    name:user_service
+    name: user-service
   config:
-    import:optional:configServer:http://localhost:2000
-  server:
-    port:8001
+    import: optional:configserver:http://localhost:1000
+
+server:
+  port: 7001
