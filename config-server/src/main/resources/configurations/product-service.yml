@@ -3,7 +3,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/user_mdb?createDatabaseIfNotExist=true
     username: root
-    password: root
+    password: pandU@420
   jpa:
     open-in-view: false
     show-sql: true
