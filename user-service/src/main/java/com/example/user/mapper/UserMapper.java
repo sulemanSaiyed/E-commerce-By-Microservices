@@ -14,8 +14,7 @@ public class UserMapper {
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .password(request.getPassword())
-                .createdAt(LocalDate.now())
-                .updatedAt(LocalDate.now())
+
                 .build();
     }
 
