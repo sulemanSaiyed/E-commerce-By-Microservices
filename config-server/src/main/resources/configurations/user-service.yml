@@ -13,4 +13,4 @@ spring:
       hibernate:
         format_sql: true
   app:
-    base-url: /api/v1/route-us
+    base-url: /api/v1/us
