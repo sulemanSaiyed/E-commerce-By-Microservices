@@ -1,8 +1,7 @@
 package com.example.order.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -13,6 +12,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItem {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     // Reference to the product record
     private Long productId;
