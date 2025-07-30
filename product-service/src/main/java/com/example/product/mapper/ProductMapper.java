@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
-public class ProductMapper {
+public interface ProductMapper {
     /**
      * Converts a ProductRequest to a Product entity.
      *
