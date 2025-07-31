@@ -19,4 +19,7 @@ public class CartItem {
     private Long productId;
     private int quantity;
     private boolean ordered;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 }

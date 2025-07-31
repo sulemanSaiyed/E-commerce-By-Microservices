@@ -1,6 +1,7 @@
 package com.example.order.integration;
 
 
+import com.example.order.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,4 +22,8 @@ public interface ProductClient {
 
     @GetMapping("/products/{id}/availability")
     boolean checkProductAvailability(@PathVariable("id") Long id, @RequestParam("quantity") int quantity);
+
+
+    @GetMapping("/products/{id}")
+    Product getProductById(@PathVariable("id") Long id);
 }
