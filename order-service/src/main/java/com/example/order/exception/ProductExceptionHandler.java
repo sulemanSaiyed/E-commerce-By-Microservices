@@ -1,9 +1,9 @@
-package com.example.order.exception.handler;
+package com.example.order.exception;
 
-import com.example.order.exception.ProductOutOfStockException;
-import com.example.order.exception.util.ErrorStructure;
-import com.example.order.exception.util.RestResponseBuilder;
+import com.example.order.util.ErrorStructure;
+import com.example.order.util.RestResponseBuilder;
 import lombok.AllArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
