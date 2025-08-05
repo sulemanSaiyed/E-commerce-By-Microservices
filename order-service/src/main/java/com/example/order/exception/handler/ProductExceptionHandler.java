@@ -1,5 +1,6 @@
-package com.example.order.exception;
+package com.example.order.exception.handler;
 
+import com.example.order.exception.ProductOutOfStockException;
 import com.example.order.util.ErrorStructure;
 import com.example.order.util.RestResponseBuilder;
 import lombok.AllArgsConstructor;
