@@ -1,6 +1,6 @@
 package com.example.order.mapper;
 
-import com.example.order.model.CartItem;
+import com.example.order.integration.model.CartItem;
 import com.example.order.response.CartItemResponse;
 import org.mapstruct.Mapper;
 

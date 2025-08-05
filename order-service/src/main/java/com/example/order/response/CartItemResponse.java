@@ -1,6 +1,6 @@
 package com.example.order.response;
 
-import com.example.order.model.Product;
+import com.example.order.integration.model.Product;
 import lombok.Data;
 
 @Data

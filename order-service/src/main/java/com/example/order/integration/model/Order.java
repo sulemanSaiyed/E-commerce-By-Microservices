@@ -1,4 +1,4 @@
-package com.example.order.model;
+package com.example.order.integration.model;
 
 import jakarta.persistence.*;
 import lombok.*;

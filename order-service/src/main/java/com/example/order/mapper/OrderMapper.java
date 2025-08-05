@@ -1,7 +1,7 @@
 package com.example.order.mapper;
 
 
-import com.example.order.model.Order;
+import com.example.order.integration.model.Order;
 import com.example.order.response.OrderResponse;
 import org.mapstruct.Mapper;
 

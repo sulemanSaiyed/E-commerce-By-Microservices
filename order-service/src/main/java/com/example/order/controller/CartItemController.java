@@ -1,7 +1,8 @@
 package com.example.order.controller;
 
 
-import com.example.order.model.CartItem;
+import com.example.order.integration.model.CartItem;
+import com.example.order.response.CartItemResponse;
 import com.example.order.service.CartItemService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,10 +17,11 @@ public class CartItemController {
     private final CartItemService cartItemService;
 
     @PostMapping("/cart-items/products/{productId}")
-    public ResponseEntity<CartItem> createCartItem(@PathVariable Long productId, @RequestParam int quantity) {
-        CartItem cartItem = cartItemService.createCartItem(productId, quantity);
-        return ResponseEntity.status(HttpStatus.CREATED).body(cartItem);
+    public ResponseEntity<CartItemResponse> createCartItem(@PathVariable Long productId, @RequestParam int quantity) {
+        CartItemResponse response = cartItemService.createCartItem(productId, quantity);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
     @PatchMapping("/cart-items/{cartItemId}")
     public ResponseEntity<CartItem> updateCartItem(@PathVariable long cartItemId, @RequestParam int quantity) {
         CartItem updatedCartItem = cartItemService.updateCartItem(cartItemId, quantity);

@@ -1,5 +1,5 @@
 package com.example.order.repository;
-import com.example.order.model.CartItem;
+import com.example.order.integration.model.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
