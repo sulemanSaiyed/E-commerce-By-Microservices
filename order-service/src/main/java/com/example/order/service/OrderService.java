@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import feign.FeignException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -77,7 +78,7 @@ public class OrderService {
         log.debug("Mapping cart items to CartItemResponse objects...");
         return cartItems.stream()
                 .map(item -> {
-                    Product product = productClient.getProductById(item.getProductId());
+                    var product = getProduct(item);
                     CartItemResponse response = cartItemMapper.mapToCartItemResponse(item);
                     response.setProduct(product);
                     return response;
@@ -85,6 +86,15 @@ public class OrderService {
                 .toList();
     }
 
+    private Product getProduct(CartItem item) {
+        Product product = null;
+        try {
+            product = productClient.getProductById(item.getProductId());
+        } catch (FeignException e) {
+            System.out.println(e.getMessage());
+        }
+        return product;
+    }
     private void UpdateCartItemAsOrdered(List<CartItem> cartItems, Order order) {
         log.info("Updating cart items as ordered...");
         cartItems.forEach(item -> {
@@ -98,7 +108,7 @@ public class OrderService {
         log.debug("Extracting total amount from cart items...");
         log.debug("Validating cart items for stock availability...");
         return cartItems.stream().map(item -> {
-            Product product = productClient.getProductById(item.getProductId());
+            var product = getProduct(item);
 
             if (product == null || product.getStock() < item.getQuantity()) {
                 log.error("Failed to create order - insufficient stock");
